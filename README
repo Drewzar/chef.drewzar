@@ -11,7 +11,7 @@
 
 
 # Installers
-isntall: all
+install: all
 
 chef: opscode-repo
 	@echo "=> Installing chef"
