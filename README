@@ -1,0 +1,28 @@
+# -*- mode: makefile-gmake;  -*-
+# MUST HAVE
+# apt-get install git-core make
+#
+# Run
+#####
+# git clone git@github.com:Drewzar/chef.drewzar.git
+# cd chef.drewzar
+# make -f README install
+#####
+
+
+# Installers
+isntall: all
+
+chef: opscode-repo
+	@echo "=> Installing chef"
+	sudo apt-get install chef -y
+	@echo "=> Stopping chef-client service"
+	sudo service chef-client stop
+	@echo "=> Disabling the chef-client service"
+	sudo update-rc.d chef-client disabled
+
+opscode-repo:
+	@echo "=>Adding the opscode repo"
+	echo "deb http://apt.opscode.com/ `lsb_release -cs`-0.10 main" | sudo tee /etc/apt/sources.list.d/opscode.list
+	wget -qO - http://apt.opscode.com/packages@opscode.com.gpg.key | sudo apt-key add -
+	sudo apt-get update
