@@ -19,7 +19,7 @@ chef: opscode-repo
 	@echo "=> Stopping chef-client service"
 	sudo service chef-client stop
 	@echo "=> Disabling the chef-client service"
-	sudo update-rc.d chef-client disabled
+	sudo update-rc.d chef-client disable
 
 opscode-repo:
 	@echo "=>Adding the opscode repo"
