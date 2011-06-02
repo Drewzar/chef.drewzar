@@ -1,0 +1,3 @@
+= DESCRIPTION: Bootstraps drewzars server settings
+
+= USEAGE: Add recipe[bootstrap] to the run_list in node.json

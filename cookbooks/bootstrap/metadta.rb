@@ -1,0 +1,5 @@
+maintainer        "Drewzar"
+maintainer_email  "drew@drewzar.com"
+license           "All rights reserved"
+description       "Server settings for drewzar.com"
+version           "0.0.1"
